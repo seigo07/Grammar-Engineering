@@ -16,4 +16,5 @@ Grammar engineering.
 
 * Please run the following command
 ```
+python parse.py
 ```
