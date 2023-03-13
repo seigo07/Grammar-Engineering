@@ -1,0 +1,11 @@
+S -> NP VP
+NP -> ProperNoun | N
+
+VP -> VP ARG
+VP -> V
+ARG -> NP
+
+V -> 'invent'
+V -> 'invents'
+ProperNoun -> 'Wallace'
+N -> 'contraptions'
