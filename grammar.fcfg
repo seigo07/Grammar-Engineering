@@ -1,11 +1,33 @@
+
 S -> NP VP
-NP -> ProperNoun | N
+S -> Aux NP VP
+S -> Wh VP
+S -> Wh Aux NP VP
+S -> NP CONJ NP VP NP
+S -> NP ADJ VP NP NP
+NP -> Det Norminal
+NP -> ProperNoun
+Norminal -> N
+Norminal -> N Norminal
 
 VP -> VP ARG
 VP -> V
 ARG -> NP
+ARG -> NP PP
+ARG -> PP
+PP -> Prep NP
 
-V -> 'invent'
-V -> 'invents'
-ProperNoun -> 'Wallace'
-N -> 'contraptions'
+V -> 'invent' | 'invents'
+V -> 'barks' | 'barked'
+V -> 'eat' | 'eats' | 'ate'
+V -> 'feed' | 'feeds'
+V -> 'thinks'
+V -> 'puts'
+
+N -> 'contraptions' | 'cheese' | 'kitchen' | 'dinner'
+ProperNoun -> 'Wallace' | 'Gromit'
+CONJ -> 'and'
+Adv -> 'seldom' | 'often' | 'when'
+PREP -> 'in' | 'after'
+Det -> 'the'
+AUX -> 'does' | 'do'
