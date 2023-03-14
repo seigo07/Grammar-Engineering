@@ -1,0 +1,25 @@
+
+# Context-free grammar Rules
+
+S -> NP VP
+S -> NP VP CCONJ VP
+S -> NP VP NP NP
+S -> WH NP VP NP VP
+S -> WH AUX NP VP
+S -> NP VP NP CCONJ VP NP
+NP -> PROPN | NOUN | PROPN CCONJ PROPN | ADP DET NOUN | ADP NOUN | DET NOUN
+VP -> VERB | VERB NP | VERB PROPN VERB
+VP -> ADV VERB | ADV VERB NOUN | ADV VERB PROPN NOUN | AUX VERB
+
+
+# Lexicon Rules
+
+VERB -> 'invent' | 'invents' | 'barks' | 'barked' | 'eat' | 'eats' | 'ate' | 'feed' | 'feeds' | 'thinks' | 'puts'
+NOUN -> 'contraptions' | 'cheese' | 'kitchen' | 'dinner'
+PROPN -> 'Wallace' | 'Gromit'
+ADV -> 'seldom' | 'often' | 'when'
+ADP -> 'in' | 'after'
+AUX -> 'does' | 'do'
+DET -> 'the'
+CCONJ -> 'and' | 'when'
+WH ->  'when'
