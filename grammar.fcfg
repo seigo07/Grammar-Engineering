@@ -10,6 +10,8 @@ S -> NP[NUM=?n, PER=?p] VP[NUM=?n, TENSE = ?t, PER=?p] SUBS[SUBCAT=?rest, NUM?=n
 S -> WH NP[NUM=?n, PER=?p] AUX[NUM=?n, PER=?p] NP[NUM=?n, PER=?p] V[FORM=pres, SUBCAT=intrans]
 S -> NP[NUM=?n, PER=?p] MOD_P VP[NUM=?n, TENSE = ?t, PER=?p]
 S -> WH AUX[SUBCAT=aux, NUM = 'sg', PER = 3] NP[NUM=?n, PER=?p]  V[FORM=pres, SUBCAT=intrans]  PP[NUM=?n, PER=?p, TENSE = ?t]
+S -> NP[NUM=?n, PER=?p] V[SUBCAT=clause, TENSE=pres, NUM=sg] SUBS[SUBCAT=?rest, NUM=?n, PER=?p] CONJ VP[NUM=?n, TENSE = ?t, PER=?p]
+S -> NP[NUM=?n, PER=?p] VP[NUM=?n, TENSE = ?t, PER=?p] CONJ VP[NUM=?n, TENSE = ?t, PER=?p]
 
 # subsentence
 SUBS[SUBCAT=?rest, NUM=?n, PER=?p] -> NP[SUBCAT=[HEAD=[NUM=?n, PER=?p]]] VP[SUBCAT=nil, HEAD=[NUM=?n, PER=?p]]
@@ -22,6 +24,7 @@ NP[NUM=?n, PER=?p] -> NP[NUM=?n, PER=?p] PP[NUM=?n, PER=?p]
 NP[NUM=?n, PER=?p] -> DET Noun[NUM=?n, PER=?p]
 NP[NUM=?n, PER=?p] -> ADJP[SUBCAT=?rest, TENSE = ?t, NUM=?n, PER=?p] NP[NUM=?n, PER=?p]
 NP[NUM=?n, PER=?p] -> Noun[num=sg]
+NP[NUM=?n, PER=?p] -> DET Noun[num=pl]
 NP[NUM=?n, PER=?p] -> ProperNoun[NUM=?n, PER=?p] CONJ ProperNoun[NUM=?n, PER=?p]
 
 
@@ -30,6 +33,7 @@ VP[TENSE = ?t, NUM=?n, PER=?p] -> TV[SUBCAT=trans, NUM=?n, TENSE = ?t, PER=?p] N
 VP[NUM=?n, TENSE = ?t, PER=?p] -> V[SUBCAT=intrans, TENSE=?t, NUM=?n]
 VP[NUM=?n, TENSE = ?t, PER=?p] -> V[FORM=pres, SUBCAT=clause, -AUX, PER=3]
 VP[NUM=?n, TENSE = ?t, PER=?p] -> TV[SUBCAT=trans, NUM=?n, TENSE = ?t, PER=?p] NP[NUM=?n, PER=?p]
+
 VP[NUM=?n, TENSE = ?t, PER=?p] -> TV[SUBCAT=trans, NUM=?n, TENSE = ?t, PER=?p]  V[TENSE=prescon, FORM=prespart , SUBCAT=[HEAD=np]] NP[NUM=?n, PER=?p]
 VP[NUM=?n, TENSE = ?t, PER=?p] -> V[SUBCAT=clause, TENSE=pres, NUM=pl] SUBS[SUBCAT=?rest, NUM?=n, PER=?p]
 VP[NUM=?n, TENSE = ?t, PER=?p] -> V[SUBCAT=clause, TENSE=pres, NUM=sg] SUBS[SUBCAT=?rest, NUM?=n, PER=?p]
