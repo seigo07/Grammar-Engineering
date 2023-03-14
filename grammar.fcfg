@@ -1,33 +1,25 @@
 
+# Context-free grammar Rules
+
 S -> NP VP
-S -> Aux NP VP
-S -> Wh VP
-S -> Wh Aux NP VP
-S -> NP CONJ NP VP NP
-S -> NP ADJ VP NP NP
-NP -> Det Norminal
-NP -> ProperNoun
-Norminal -> N
-Norminal -> N Norminal
+S -> NP VP CCONJ VP
+S -> NP VP NP NP
+S -> WH NP VP NP VP
+S -> WH AUX NP VP
+S -> NP VP NP CCONJ VP NP
+NP -> PROPN | NOUN | PROPN CCONJ PROPN | ADP DET NOUN | ADP NOUN | DET NOUN
+VP -> VERB | VERB NP | VERB PROPN VERB
+VP -> ADV VERB | ADV VERB NOUN | ADV VERB PROPN NOUN | AUX VERB
 
-VP -> VP ARG
-VP -> V
-ARG -> NP
-ARG -> NP PP
-ARG -> PP
-PP -> Prep NP
 
-V -> 'invent' | 'invents'
-V -> 'barks' | 'barked'
-V -> 'eat' | 'eats' | 'ate'
-V -> 'feed' | 'feeds'
-V -> 'thinks'
-V -> 'puts'
+# Lexicon Rules
 
-N -> 'contraptions' | 'cheese' | 'kitchen' | 'dinner'
-ProperNoun -> 'Wallace' | 'Gromit'
-CONJ -> 'and'
-Adv -> 'seldom' | 'often' | 'when'
-PREP -> 'in' | 'after'
-Det -> 'the'
+VERB -> 'invent' | 'invents' | 'barks' | 'barked' | 'eat' | 'eats' | 'ate' | 'feed' | 'feeds' | 'thinks' | 'puts'
+NOUN -> 'contraptions' | 'cheese' | 'kitchen' | 'dinner'
+PROPN -> 'Wallace' | 'Gromit'
+ADV -> 'seldom' | 'often' | 'when'
+ADP -> 'in' | 'after'
 AUX -> 'does' | 'do'
+DET -> 'the'
+CCONJ -> 'and' | 'when'
+WH ->  'when'
