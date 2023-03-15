@@ -29,7 +29,8 @@ NP[NUM=?n, PER=?p] -> ProperNoun[NUM=?n, PER=?p] CONJ ProperNoun[NUM=?n, PER=?p]
 
 
 VP[NUM=?n, TENSE = ?t, PER=?p] -> ADV VP[SUBCAT=[HEAD=?arg, TAIL=?rest], TENSE=?t, NUM=?n, PER=?p]
-VP[TENSE = ?t, NUM=?n, PER=?p] -> TV[SUBCAT=trans, NUM=?n, TENSE = ?t, PER=?p] NP[NUM=?n, PER=?p] ARG[CAT=?arg, NUM=?n, PER=?p, TENSE=?t]
+VP[TENSE = ?t, NUM=?n, PER=?p] -> TV[SUBCAT=trans, NUM=?n, TENSE = ?t, PER=?p] NP[NUM=?n, PER=?p]
+VP[TENSE = ?t, NUM=?n, PER=?p] -> TV[SUBCAT=transWithSents4, NUM=?n, TENSE = ?t, PER=?p] NP[NUM=?n, PER=?p] ARG[CAT=?arg, NUM=?n, PER=?p, TENSE=?t]
 VP[NUM=?n, TENSE = ?t, PER=?p] -> V[SUBCAT=intrans, TENSE=?t, NUM=?n]
 VP[NUM=?n, TENSE = ?t, PER=?p] -> V[FORM=pres, SUBCAT=clause, -AUX, PER=3]
 VP[NUM=?n, TENSE = ?t, PER=?p] -> TV[SUBCAT=trans, NUM=?n, TENSE = ?t, PER=?p] NP[NUM=?n, PER=?p]
@@ -40,6 +41,7 @@ VP[NUM=?n, TENSE = ?t, PER=?p] -> V[SUBCAT=clause, TENSE=pres, NUM=sg] SUBS[SUBC
 VP[NUM=?n, TENSE = ?t, PER=?p] -> MOD_P V[TENSE=pastpart, SUBCAT=intrans]
 VP[NUM=?n, TENSE = ?t, PER=?p] -> MOD_P V[TENSE=pastpart, SUBCAT=trans] NP[NUM=?n, PER=?p]
 TV[SUBCAT=trans, NUM=?n, TENSE = ?t, PER=?p] -> V[SUBCAT= trans, TENSE=pres, NUM='sg', PER=3]
+TV[SUBCAT=transWithSents4, NUM=?n, TENSE = ?t, PER=?p] -> V[SUBCAT= transWithSents4, TENSE=pres, NUM='sg', PER=3]
 TV[SUBCAT=trans, NUM=?n, TENSE = ?t, PER=?p] -> V[SUBCAT= trans, TENSE=pres, NUM='pl']
 TV[SUBCAT=trans, NUM=?n, TENSE = ?t, PER=?p] -> V[TENSE=past, SUBCAT=trans, NUM=?n, PER=?p]
 VP[NUM=?n, TENSE = ?t, PER=?p] -> V[SUBCAT=clause, TENSE=pres, NUM=sg]
@@ -68,6 +70,7 @@ Noun[NUM='sg'] -> 'cheese' | 'kitchen' | 'dinner'
 Noun[NUM='pl'] -> 'contraptions'
 
 # trasnsive verbs present
+V[SUBCAT= transWithSents4, TENSE=pres, NUM='sg', PER=3] -> 'feeds'
 V[SUBCAT= trans, TENSE=pres, NUM='sg', PER=3] -> 'feeds' | 'puts' | 'eats' | 'invents'
 V[SUBCAT= trans, TENSE=pres, NUM='pl'] -> 'eat'
 # v.i + present+sg
