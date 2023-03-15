@@ -1,4 +1,5 @@
-S -> NP[NUM=?n, PER=?p] VP[NUM=?n, TENSE = ?t, PER=?p]
+S -> ProperNoun[NUM=?n, PER=?p] VP[NUM=?n, TENSE = ?t, PER=?p]
+S -> ProperNoun[NUM=?n, PER=?p] CONJ ProperNoun[NUM=?n, PER=?p] VP[NUM=?n, TENSE = ?t, PER=?p]
 S -> WH AUX[NUM=?n, PER=?p] NP[NUM=?n, PER=?p] VP[NUM=?n, TENSE = ?t, PER=?p]
 S -> WH NP[SUBCAT=[HEAD=[NUM=?n, PER=?p]]] VP[NUM=?n, TENSE = ?t, PER=?p] SUBS[SUBCAT=nil, HEAD=[NUM=?n, PER=?p]]
 S -> WH AUX[NUM=?n, PER=?p] SUBS[SUBCAT=nil, HEAD=[NUM=?n, PER=?p]]
