@@ -2,12 +2,12 @@
 # Context-free grammar Rules
 
 S -> NP VP
-S -> NP VP CCONJ VP
+S -> NP VP CONJ VP
 S -> NP VP NP NP
 S -> WH NP VP NP VP
 S -> WH AUX NP VP
-S -> NP VP NP CCONJ VP NP
-NP -> PROPN | NOUN | PROPN CCONJ PROPN | ADP DET NOUN | ADP NOUN | DET NOUN
+S -> NP VP NP CONJ VP NP
+NP -> PROPN | NOUN | PROPN CONJ PROPN | ADP DET NOUN | ADP NOUN | DET NOUN
 VP -> VERB | VERB NP | VERB PROPN VERB
 VP -> ADV VERB | ADV VERB NOUN | ADV VERB PROPN NOUN | AUX VERB
 
@@ -21,5 +21,5 @@ ADV -> 'seldom' | 'often' | 'when'
 ADP -> 'in' | 'after'
 AUX -> 'does' | 'do'
 DET -> 'the'
-CCONJ -> 'and' | 'when'
+CONJ -> 'and' | 'when'
 WH ->  'when'
