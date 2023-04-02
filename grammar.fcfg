@@ -1,3 +1,6 @@
+
+# Feature grammar rules
+
 S -> PROPN[NUM=?n, PER=?p] VP[NUM=?n, TENSE = ?t, PER=?p]
 S -> PROPN[NUM=?n, PER=?p] CONJ PROPN[NUM=?n, PER=?p] VP[NUM=?n, TENSE = ?t, PER=?p]
 S -> WH AUX[NUM=?n, PER=?p] NP[NUM=?n, PER=?p] VP[NUM=?n, TENSE = ?t, PER=?p]
@@ -14,11 +17,10 @@ S -> WH AUX[SUBCAT=aux, NUM = 'sg', PER = 3] NP[NUM=?n, PER=?p]  VERB[FORM=pres,
 S -> NP[NUM=?n, PER=?p] VERB[SUBCAT=clause, TENSE=pres, NUM=sg] SUBS[SUBCAT=?rest, NUM=?n, PER=?p] CONJ VP[NUM=?n, TENSE = ?t, PER=?p]
 S -> NP[NUM=?n, PER=?p] VP[NUM=?n, TENSE = ?t, PER=?p] CONJ VP[NUM=?n, TENSE = ?t, PER=?p]
 
-# subsentence
+# Subsentence
 SUBS[SUBCAT=?rest, NUM=?n, PER=?p] -> NP[SUBCAT=[HEAD=[NUM=?n, PER=?p]]] VP[SUBCAT=nil, HEAD=[NUM=?n, PER=?p]]
 SUBS[SUBCAT=?rest, NUM=?n, PER=?p] -> SUBS[SUBCAT=nil, HEAD=[NUM=?n, PER=?p]] NP[NUM=?n, PER=?p]
 SUBS[SUBCAT=?rest, NUM?=n, PER=?p] -> NP[NUM=?n, PER=?p] SUBS[SUBCAT=?rest, NUM?=n, PER=?p]
-
 
 NP[NUM=?n, PER=?p] -> PROPN[NUM=?n, PER=?p]
 NP[NUM=?n, PER=?p] -> NP[NUM=?n, PER=?p] PP[NUM=?n, PER=?p]
@@ -27,7 +29,6 @@ NP[NUM=?n, PER=?p] -> ADJP[SUBCAT=?rest, TENSE = ?t, NUM=?n, PER=?p] NP[NUM=?n, 
 NP[NUM=?n, PER=?p] -> NOUN[num=sg]
 NP[NUM=?n, PER=?p] -> DET NOUN[num=pl]
 NP[NUM=?n, PER=?p] -> PROPN[NUM=?n, PER=?p] CONJ PROPN[NUM=?n, PER=?p]
-
 
 VP[NUM=?n, TENSE = ?t, PER=?p] -> ADV VP[SUBCAT=[HEAD=?arg, TAIL=?rest], TENSE=?t, NUM=?n, PER=?p]
 VP[TENSE = ?t, NUM=?n, PER=?p] -> TV[SUBCAT=trans, NUM=?n, TENSE = ?t, PER=?p] NP[NUM=?n, PER=?p]
@@ -49,15 +50,12 @@ VP[NUM=?n, TENSE = ?t, PER=?p] -> VERB[SUBCAT=clause, TENSE=pres, NUM=sg]
 VP[NUM=?n, TENSE = ?t, PER=?p] -> VERB[SUBCAT=clause, TENSE=pres, NUM=pl]
 VP[NUM=?n, TENSE = ?t, PER=?p] -> VERB[TENSE=prescon, FORM=prespart , SUBCAT=[HEAD=np]]
 
-
 NP[NUM=?n, PER=?p] -> ADJP[NUM=?n, PER=?p] NOUN[NUM=?n, PER=?p]
 ADJP[SUBCAT=?rest, TENSE = ?t, NUM=?n, PER=?p] -> ADJ
 ADJP[SUBCAT=?rest, TENSE = ?t, NUM=?n, PER=?p] -> DET[NUM=?n] ADJ ARG
 
-
 PP[NUM=?n, TENSE=?t, PER=?p] -> PREP[NUM=?n, TENSE=?t, PER=?p] NP[NUM=?n, PER=?p]
 PP[NUM=?n, TENSE=?t, PER=?p] -> PREP[NUM=?n, TENSE=?t, PER=?p] DET NP[NUM=?n, PER=?p]
-
 
 ARG[CAT=np, NUM=?n, PER=?p] -> NP[NUM = ?n, PER=?p]
 ARG[CAT=adjunct, HEAD=[NUM=?n, PER=?p, TENSE = ?t]] -> ADJP[SUBCAT=[HEAD=[NUM=?n, PER=?p, TENSE=?t]]]
@@ -65,21 +63,22 @@ ARG[CAT=v, NUM=?n, PER=?p, TENSE = ?t] -> VERB[SUBCAT=intrans, TENSE=?t, NUM=?n]
 ARG[CAT=pp, NUM=?n, PER=?p, TENSE = ?t] -> PP[NUM=?n, PER=?p, TENSE = ?t] ARG[CAT=pp, NUM=?n, PER=?p, TENSE = ?t]
 ARG[CAT=pp, NUM=?n, PER=?p, TENSE = ?t] -> PP[NUM=?n, PER=?p, TENSE = ?t]
 
-
 PROPN[NUM='sg', PER = 3] -> 'Gromit' | 'Wallace'
 NOUN[NUM='sg'] -> 'cheese' | 'kitchen' | 'dinner'
 NOUN[NUM='pl'] -> 'contraptions'
 
-# trasnsive verbs present
+# Trasnsive verbs present
 VERB[SUBCAT= transWithSents4, TENSE=pres, NUM='sg', PER=3] -> 'feeds'
 VERB[SUBCAT= trans, TENSE=pres, NUM='sg', PER=3] -> 'feeds' | 'puts' | 'eats' | 'invents'
 VERB[SUBCAT= trans, TENSE=pres, NUM='pl'] -> 'eat'
-# v.i + present+sg
+
+# v.i + present + sg
 VERB[FORM=pres, NUM='sg', SUBCAT=intrans] -> 'barks'
-# v.t + sg+ present + clause
+
+# v.t + sg + present + clause
 VERB[SUBCAT=clause, TENSE=pres, NUM=sg] -> 'thinks'
 
-# verb - past
+# Verb - past
 VERB[TENSE=past, SUBCAT=trans, NUM=?n, PER=?p] -> 'ate' | 'invent'
 VERB[TENSE=past, SUBCAT=intrans] -> 'barked'
 
