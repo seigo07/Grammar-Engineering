@@ -72,7 +72,7 @@ VERB[FORM=pres, SUBCAT=intrans] -> 'eat'
 # Trasnsive verbs present
 VERB[SUBCAT= transWithSents4, TENSE=pres, NUM='sg', PER=3] -> 'feeds'
 VERB[SUBCAT= trans, TENSE=pres, NUM='sg', PER=3] -> 'feeds' | 'puts' | 'eats' | 'invents' | 'likes'
-VERB[SUBCAT= trans, TENSE=pres, NUM='pl'] -> 'eat'
+VERB[SUBCAT= trans, TENSE=pres, NUM='pl'] -> 'eat' | 'feed'
 
 # v.i + present + sg
 VERB[FORM=pres, NUM='sg', SUBCAT=intrans] -> 'barks' | 'watches'
@@ -94,7 +94,7 @@ ADV -> 'seldom' | 'often' | 'when'
 PREP -> 'in' | 'after'
 CONJ -> 'and' | 'when'
 DET -> 'the'
-WH -> 'when' | 'what'
+WH -> 'when' | 'what' | 'whom'
 
 # Auxiliary verbs
 AUX[SUBCAT=aux, NUM = 'pl'] -> 'do'
