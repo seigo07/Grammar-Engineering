@@ -67,27 +67,36 @@ PROPN[NUM='sg', PER = 3] -> 'Gromit' | 'Wallace'
 NOUN[NUM='sg'] -> 'cheese' | 'kitchen' | 'dinner'
 NOUN[NUM='pl'] -> 'contraptions'
 
+VERB[FORM=pres, SUBCAT=intrans] -> 'eat'
+
 # Trasnsive verbs present
 VERB[SUBCAT= transWithSents4, TENSE=pres, NUM='sg', PER=3] -> 'feeds'
-VERB[SUBCAT= trans, TENSE=pres, NUM='sg', PER=3] -> 'feeds' | 'puts' | 'eats' | 'invents'
+VERB[SUBCAT= trans, TENSE=pres, NUM='sg', PER=3] -> 'feeds' | 'puts' | 'eats' | 'invents' | 'likes'
 VERB[SUBCAT= trans, TENSE=pres, NUM='pl'] -> 'eat'
 
 # v.i + present + sg
-VERB[FORM=pres, NUM='sg', SUBCAT=intrans] -> 'barks'
+VERB[FORM=pres, NUM='sg', SUBCAT=intrans] -> 'barks' | 'watches'
 
 # v.t + sg + present + clause
 VERB[SUBCAT=clause, TENSE=pres, NUM=sg] -> 'thinks'
+
+# Verb - present participle
+VERB[TENSE=prescon, FORM=prespart , SUBCAT=[HEAD=np]] -> 'inventing'
 
 # Verb - past
 VERB[TENSE=past, SUBCAT=trans, NUM=?n, PER=?p] -> 'ate' | 'invent'
 VERB[TENSE=past, SUBCAT=intrans] -> 'barked'
 
+MOD_P -> MOD AUX[FORM=base]  |  MOD NEG AUX[FORM=base]
+MOD -> 'may'
+
 ADV -> 'seldom' | 'often' | 'when'
 PREP -> 'in' | 'after'
 CONJ -> 'and' | 'when'
 DET -> 'the'
-WH -> 'when'
+WH -> 'when' | 'what'
 
 # Auxiliary verbs
 AUX[SUBCAT=aux, NUM = 'pl'] -> 'do'
 AUX[SUBCAT=aux, NUM = 'sg', PER = 3] -> 'does'
+AUX[FORM=base] -> 'have'
