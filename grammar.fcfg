@@ -79,6 +79,7 @@ VERB[FORM=pres, NUM='sg', SUBCAT=intrans] -> 'barks' | 'watches'
 
 # v.t + sg + present + clause
 VERB[SUBCAT=clause, TENSE=pres, NUM=sg] -> 'thinks'
+VERB[SUBCAT=clause, TENSE=pres, NUM=pl] -> 'think'
 
 # Verb - present participle
 VERB[TENSE=prescon, FORM=prespart , SUBCAT=[HEAD=np]] -> 'inventing'
@@ -94,7 +95,7 @@ ADV -> 'seldom' | 'often' | 'when'
 PREP -> 'in' | 'after'
 CONJ -> 'and' | 'when'
 DET -> 'the'
-WH -> 'when' | 'what' | 'whom'
+WH -> 'when' | 'what' | 'whom' | 'where'
 
 # Auxiliary verbs
 AUX[SUBCAT=aux, NUM = 'pl'] -> 'do'
